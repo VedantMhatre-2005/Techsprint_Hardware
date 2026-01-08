@@ -1,0 +1,24 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// WiFi Credentials
+#define WIFI_SSID "Your_WiFi_Name"        // Replace with your WiFi SSID
+#define WIFI_PASSWORD "Your_WiFi_Password" // Replace with your WiFi password
+
+// Firebase Configuration
+#define FIREBASE_HOST "your-project-id-default-rtdb.firebaseio.com"  // Your Firebase Realtime Database URL
+#define FIREBASE_API_KEY "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"        // Your Firebase Web API Key
+#define FIREBASE_DATABASE_SECRET "your_database_secret_here"          // Your Firebase Database Secret
+
+// Webhook Configuration (Optional - for Wokwi to Firebase bridge)
+#define WEBHOOK_HOST "192.168.1.100"  // IP of your proxy server (if using)
+#define WEBHOOK_PORT 3000             // Port of your proxy server
+#define WEBHOOK_PATH "/firebase"      // Path for Firebase data
+
+// Sensor Reading Interval (milliseconds)
+#define READING_INTERVAL 5000  // Send data every 5 seconds
+
+// Device Identifier
+#define DEVICE_ID "sensor_node_01"
+
+#endif
