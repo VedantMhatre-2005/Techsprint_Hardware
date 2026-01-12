@@ -22,11 +22,16 @@ Your ESP32 now sends sensor data to Firebase Realtime Database every 5 seconds w
       - humidity
       - gas_ppm
       - motion_detected
+      - avg_temp_1h      ← NEW: Simulated 1-hour average temp
+      - avg_hum_1h       ← NEW: Simulated 1-hour average humidity
       - device_id
     /history             ← Historical data (for analysis)
       /{timestamp_1}
-      /{timestamp_2}
       ...
+
+/labs
+  /sensor_node_01
+    /ac                  ← Control switch (boolean: true/false)
 ```
 
 ## 🔧 Next Steps
@@ -39,6 +44,10 @@ Go to your Firebase Console → Realtime Database → Rules and set:
 {
   "rules": {
     "devices": {
+      ".read": true,
+      ".write": true
+    },
+    "labs": {
       ".read": true,
       ".write": true
     }
