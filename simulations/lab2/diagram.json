@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "author": "SafeLabs",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -120,
+      "left": -140,
+      "attrs": { "label": "DHT22" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 0,
+      "left": -180,
+      "attrs": { "label": "Simulated Gas" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 40,
+      "left": 180,
+      "attrs": { "label": "PIR Sensor" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_ac",
+      "top": -80,
+      "left": 150,
+      "attrs": { "color": "green", "label": "AC Status" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "res1",
+      "top": -100,
+      "left": 200,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_avg_temp",
+      "top": 120,
+      "left": -180,
+      "attrs": { "label": "Avg Temp (1h)" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_avg_hum",
+      "top": 240,
+      "left": -180,
+      "attrs": { "label": "Avg Hum (1h)" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    
+    [ "dht1:VCC", "esp:3V3", "red", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [] ],
+    [ "dht1:SDA", "esp:4", "green", [] ],
+    
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.2", "black", [] ],
+    [ "pot1:SIG", "esp:34", "green", [] ],
+    
+    [ "pir1:VCC", "esp:5V", "red", [] ],
+    [ "pir1:GND", "esp:GND.3", "black", [] ],
+    [ "pir1:OUT", "esp:27", "green", [] ],
+    
+    [ "esp:26", "led_ac:A", "green", [] ],
+    [ "led_ac:C", "res1:1", "black", [] ],
+    [ "res1:2", "esp:GND.1", "black", [] ],
+    
+    [ "pot_avg_temp:VCC", "esp:3V3", "red", [] ],
+    [ "pot_avg_temp:GND", "esp:GND.2", "black", [] ],
+    [ "pot_avg_temp:SIG", "esp:32", "green", [] ],
+
+    [ "pot_avg_hum:VCC", "esp:3V3", "red", [] ],
+    [ "pot_avg_hum:GND", "esp:GND.3", "black", [] ],
+    [ "pot_avg_hum:SIG", "esp:33", "green", [] ]
+  ]
+}

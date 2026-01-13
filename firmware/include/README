@@ -1,0 +1,3 @@
+This directory is for configuration header files.
+
+Place config.h symlink here pointing to /configs/labX_config.h

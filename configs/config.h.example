@@ -1,0 +1,37 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// WiFi Credentials
+#define WIFI_SSID "Wokwi-GUEST"        // For Wokwi simulation, use "Wokwi-GUEST"
+#define WIFI_PASSWORD ""               // No password for Wokwi-GUEST
+
+// Firebase Configuration
+#define FIREBASE_HOST "https://YOUR-PROJECT-ID-default-rtdb.firebaseio.com/"  // Your Firebase Realtime Database URL
+#define FIREBASE_API_KEY "YOUR_FIREBASE_WEB_API_KEY"                          // Your Firebase Web API Key
+#define FIREBASE_DATABASE_SECRET "YOUR_FIREBASE_DATABASE_SECRET"              // Your Firebase Database Secret
+
+// Webhook Configuration (Optional - for Wokwi to Firebase bridge)
+#define WEBHOOK_HOST "192.168.1.100"  // IP of your proxy server (if using)
+#define WEBHOOK_PORT 3000             // Port of your proxy server
+#define WEBHOOK_PATH "/firebase"      // Path for Firebase data
+
+// Sensor Reading Interval (milliseconds)
+#define READING_INTERVAL 5000  // Send data every 5 seconds
+
+// Device Identifier - CHANGE THIS FOR EACH LAB
+#define DEVICE_ID "sensor_node_01"  // Use: sensor_node_01, sensor_node_02, sensor_node_03
+
+// ======================================
+// SETUP INSTRUCTIONS:
+// ======================================
+// 1. Copy this file to lab1_config.h, lab2_config.h, lab3_config.h
+// 2. Update FIREBASE_HOST, FIREBASE_API_KEY, and FIREBASE_DATABASE_SECRET
+// 3. Change DEVICE_ID for each lab:
+//    - lab1_config.h: sensor_node_01
+//    - lab2_config.h: sensor_node_02
+//    - lab3_config.h: sensor_node_03
+// 4. For Wokwi simulation, keep WiFi as "Wokwi-GUEST" with no password
+// 5. For real hardware, update WiFi credentials
+// ======================================
+
+#endif
